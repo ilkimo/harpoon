@@ -260,7 +260,7 @@ function HarpoonList:resolve_displayed(displayed, length)
         local v = displayed[i]
         local index = index_of(list_displayed, self._length, v)
         if utils.is_white_space(v) then
-            new_list[i] = ""
+            new_list[i] = nil
         elseif index == -1 then
             new_list[i] = self.config.create_list_item(self.config, v)
             change = change + 1
