@@ -187,10 +187,8 @@ function HarpoonList:remove(item)
         local v = self.items[i]
         if self.config.equals(v, item) then
             Logger:log("HarpoonList:remove", { item = item, index = i })
-            self.items[i] = nil
-            if i == self._length then
-                self._length = determine_length(self.items, self._length)
-            end
+            table.remove(self.items, i)
+            self._length = determine_length(self.items, self._length)
             Extensions.extensions:emit(
                 Extensions.event_names.REMOVE,
                 { list = self, item = item, idx = i }
