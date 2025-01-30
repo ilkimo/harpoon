@@ -21,13 +21,6 @@ local function determine_length(arr, previous_length)
             break
         end
     end
-
-    Logger:log("HarpoonList:determine_length", {
-        arr_length = arr.length,
-        previous_length = previous_length,
-        new_length = idx,
-    })
-
     return idx
 end
 
