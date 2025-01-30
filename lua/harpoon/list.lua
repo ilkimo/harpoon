@@ -342,11 +342,7 @@ function HarpoonList:display()
     local out = {}
     for i = 1, self._length do
         local v = self.items[i]
-        if v == nil then
-            out[i] = ""
-        else
-            out[i] = self.config.display(v)
-        end
+        out[i] = v == nil and "" or self.config.display(v)
     end
 
     return out
